@@ -7,6 +7,8 @@ dp=Dispatcher()
 
 from handlers.user_command import user_routor
 dp.include_router(user_routor)
+from handlers.group_command import group_routor
+dp.include_router(group_routor)
 
 async def main():
     print(f"Здравствуй ")
