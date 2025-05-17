@@ -37,6 +37,9 @@ async def your_name(message:types.Message):
 @user_routor.message(Command('age'), F.text.contains("Возрост"))
 async def age(message:types.Message):
     pass
+@user_routor.message(F.text.lower()=="назад")
+async def back(message: types.Message):
+    await message.answer("Окей, так уж и быть", reply_markup=buttons_reply.main_kb)
 # @user_routor.message(F.text)
 # async def echo(message:types.Message):
 #     user_text=message.text
