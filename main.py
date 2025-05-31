@@ -1,8 +1,11 @@
 from aiogram import Bot, Dispatcher
 import asyncio
 
+from aiogram.client.default import DefaultBotProperties
+from aiogram.enums import ParseMode
+
 token="7802010399:AAGDyS3d1zRw6oMJJSjg6ENDLBRXuIr-R14"
-bot=Bot(token=token)
+bot=Bot(token=token, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
 dp=Dispatcher()
 
 from handlers.user_command import user_routor

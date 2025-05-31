@@ -11,7 +11,7 @@ async def start_cmd(message:types.Message):
 @user_routor.message(Command('charecter'))
 @user_routor.message(F.text.lower()=="персонаж")
 async def Charecter(message:types.Message):
-    await message.answer('Ваш персонаж')
+    await message.answer('Ваш персонаж', reply_markup=buttons_inline.links_kb_v2)
 @user_routor.message(Command('backpack'))
 @user_routor.message(F.text.lower()=="рюкзак")
 async def backpack(message:types.Message):
@@ -38,7 +38,15 @@ async def back_puck(callback:types.CallbackQuery):
 @user_routor.message(Command('abilite'))
 @user_routor.message(F.text.lower()=="навыки")
 async def abilite(message:types.Message):
-    await message.answer('Вы можете делать')
+    await message.answer('Вы можете делать', reply_markup=buttons_inline.links_kb)
+
+    await message.answer("""
+    <b> Жирный </b>
+    <u> Жирный </u>
+    <i> Жирный </i>
+    <tg-spoiler> Жирный </tg-spoiler>
+    <code> Жирный </code>
+    """)
 @user_routor.message(Command('equipment'), F.text.contains("Снаряжение"))
 async def equipment(message:types.Message):
     await message.answer('На вас надето')
